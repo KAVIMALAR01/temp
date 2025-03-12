@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "PIN-.YYYY.-.#### ",
+ "creation": "2025-03-04 16:32:31.769137",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "pincode",
+  "post_office_name",
+  "city",
+  "state",
+  "country",
+  "column_break_xhop",
+  "address_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Pincode",
+   "reqd": 1
+  },
+  {
+   "fieldname": "post_office_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Post Office Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "State",
+   "read_only": 1
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Country",
+   "read_only": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "city",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_xhop",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address_details",
+   "fieldtype": "Long Text",
+   "label": "Address Details"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-03-05 09:20:19.923627",
+ "modified_by": "Administrator",
+ "module": "Hotel Management",
+ "name": "Pincode to address",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

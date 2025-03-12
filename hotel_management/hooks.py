@@ -5,6 +5,8 @@ app_description = "Hotel Management"
 app_email = "kavimalar01092003@gmail.com"
 app_license = "mit"
 
+
+
 # Apps
 # ------------------
 
@@ -145,6 +147,15 @@ app_license = "mit"
 # 	}
 # }
 
+scheduler_events = {
+    "cron": {
+        "* * * * *": [
+            "hotel_management.hotel_management.customization.sales_invoice.sales_invoice_utils.test_sales_invoice_event"
+        ]
+    }
+}
+
+
 # Scheduled Tasks
 # ---------------
 
@@ -241,4 +252,29 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
+
+doctype_list_js = {
+    "Item": "hotel_management/customization/item/item_list.js"
+}
+
+doctype_js = {
+    "Sales Invoice": "hotel_management/customization/sales_invoice/sales_invoice.js",
+    "Purchase Invoice": "hotel_management/customization/purchase_invoice/purchase_invoice.js",
+    "Sales Order": "hotel_management/customization/sales_order/sales_order.js",
+    "Purchase Order": "hotel_management/customization/purchase_order/purchase_order.js"
+}
+
+doc_events = {
+    "Customer": {
+        "onload": "hotel_management.hotel_management.customization.customer.customer.fetch_reservation_history"
+    },
+    "Sales Order": {
+        "on_update_after_submit": "hotel_management.hotel_management.customization.sales_order.sales_order.on_update_after_submit",
+        "on_cancel": "hotel_management.hotel_management.customization.sales_order.sales_order.on_cancel"
+        #"on_update": "hotel_management.hotel_management.customization.sales_order.sales_order.send_workflow_email"
+    }
+}
+
+
+
 

@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "GU-.####",
+ "creation": "2025-02-17 15:50:31.628704",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "guest_name",
+  "address",
+  "contact_no",
+  "email",
+  "id_proof",
+  "id_proof_no",
+  "guest_preferences"
+ ],
+ "fields": [
+  {
+   "fieldname": "guest_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Guest Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Contact No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "id_proof",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Id Proof",
+   "options": "Passport\nDriving License\nAadhar Card\nNational Id",
+   "reqd": 1
+  },
+  {
+   "fieldname": "id_proof_no",
+   "fieldtype": "Data",
+   "label": "Id Proof No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "guest_preferences",
+   "fieldtype": "Text",
+   "label": "Guest Preferences"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-18 15:54:13.600725",
+ "modified_by": "Administrator",
+ "module": "Hotel Management",
+ "name": "Guest",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

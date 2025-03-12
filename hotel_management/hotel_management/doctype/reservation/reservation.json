@@ -1,0 +1,221 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "RES-.YYYY.-.#### ",
+ "creation": "2025-02-17 16:21:45.361680",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "guest",
+  "room",
+  "booking_date",
+  "check_in",
+  "check_out",
+  "no_of_guests",
+  "status",
+  "deposit_amount",
+  "cancellation_fee",
+  "additional_charges",
+  "total_amount",
+  "refund_amount",
+  "sales_invoice",
+  "payment_status",
+  "amended_from",
+  "column_break_smrv",
+  "special_requests",
+  "reason_for_cancellation",
+  "ratings",
+  "feedback"
+ ],
+ "fields": [
+  {
+   "fieldname": "guest",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Guest",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "room",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Room",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "no_of_guests",
+   "fieldtype": "Int",
+   "label": "No of Guests",
+   "reqd": 1
+  },
+  {
+   "default": "now",
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "label": "Booking Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "special_requests",
+   "fieldtype": "Small Text",
+   "label": "Special Requests"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nConfirmed\nCancelled\nChecked-in\nChecked-out",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Reservation",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_smrv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "deposit_amount",
+   "fieldtype": "Currency",
+   "label": "Deposit Amount",
+   "mandatory_depends_on": "eval:doc.status == \"Confirmed\""
+  },
+  {
+   "depends_on": "eval:doc.status == \"Cancelled\"\n",
+   "fieldname": "cancellation_fee",
+   "fieldtype": "Currency",
+   "label": "Cancellation Fee",
+   "mandatory_depends_on": "eval:doc.status == \"Cancelled\"\n"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "additional_charges",
+   "fieldtype": "Currency",
+   "label": "Additional Charges"
+  },
+  {
+   "fieldname": "refund_amount",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Refund Amount"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Sales Invoice",
+   "options": "Sales Invoice"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "Pending\nPartially Paid\nFully Paid"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.status == \"Cancelled\"",
+   "fieldname": "reason_for_cancellation",
+   "fieldtype": "Small Text",
+   "label": "Reason for Cancellation",
+   "mandatory_depends_on": "eval:doc.status == \"Cancelled\""
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.status == \"Checked-out\"",
+   "fieldname": "ratings",
+   "fieldtype": "Rating",
+   "label": "Ratings",
+   "mandatory_depends_on": "eval:doc.status == \"Checked-out\""
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.status == \"Checked-out\"",
+   "fieldname": "feedback",
+   "fieldtype": "Small Text",
+   "label": "Feedback"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount"
+  },
+  {
+   "fieldname": "check_in",
+   "fieldtype": "Datetime",
+   "label": "Check In Date"
+  },
+  {
+   "fieldname": "check_out",
+   "fieldtype": "Datetime",
+   "label": "Check Out Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Sales Invoice",
+   "link_fieldname": "custom_reservation"
+  }
+ ],
+ "modified": "2025-02-24 15:37:14.880978",
+ "modified_by": "Administrator",
+ "module": "Hotel Management",
+ "name": "Reservation",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Customer",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

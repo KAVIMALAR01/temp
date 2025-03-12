@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "BILL-.####",
+ "creation": "2025-02-17 16:51:12.189303",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "reservation",
+  "guest",
+  "room_charges",
+  "service_charges",
+  "tax",
+  "total_amount",
+  "payment_status",
+  "payment_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "reservation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Reservation",
+   "options": "Reservation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "guest",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Guest",
+   "options": "Guest",
+   "reqd": 1
+  },
+  {
+   "fieldname": "room_charges",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Room Charges",
+   "reqd": 1
+  },
+  {
+   "fieldname": "service_charges",
+   "fieldtype": "Currency",
+   "label": "Service Charges"
+  },
+  {
+   "fieldname": "tax",
+   "fieldtype": "Currency",
+   "label": "Tax"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment status",
+   "options": "Paid\nPending\nPartially paid"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-18 15:51:41.448515",
+ "modified_by": "Administrator",
+ "module": "Hotel Management",
+ "name": "Bill",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
