@@ -3,9 +3,6 @@ from frappe import _
 
 @frappe.whitelist()
 def get_sales_invoice_for_reservation(reservation_name):
-    """
-    Fetches the Sales Invoice linked to a reservation and returns its name.
-    """
     sales_invoice = frappe.get_all(
         "Sales Invoice",
         filters={"custom_reservation": reservation_name, "docstatus": 1},
